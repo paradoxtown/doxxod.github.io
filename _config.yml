@@ -7,12 +7,12 @@ description: "Every failure is leading towards success."
 keyword: "JinZe, paradoxtown, paradox, iOS, Apple, iPhone"
 url: "http://paradoxtown.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/paradoxtown/paradoxtown.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/wallhaven-620694.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -21,8 +21,8 @@ RSS: false
 # weibo_username:     qiubaiying
 zhihu_username:     xodarap
 github_username:    paradoxtown
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+facebook_username:  
+jianshu_username:   
 #twitter_username:   qiubaiying
 
 
@@ -31,7 +31,7 @@ jianshu_username:   e71990ada2fd
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 permalink: pretty
-paginate: 10
+paginate: 7
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
@@ -64,9 +64,9 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: f2c84e7629bb1446c1a4                            #生成的clientID
   clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  repo: paradoxtown.github.io    #仓库名称
+  owner: paradoxtown   #github用户名
+  admin: paradoxtown
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 

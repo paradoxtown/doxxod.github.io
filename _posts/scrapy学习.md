@@ -1,3 +1,16 @@
+---
+layout:     post
+title:      scrapy学习
+subtitle:   学习自大邓
+date:       2018-05-04
+author:     paradox
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - spider
+    - scrapy
+---
+
 # scrapy学习
 
 ###项目创建

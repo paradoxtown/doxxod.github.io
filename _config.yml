@@ -18,10 +18,10 @@ sidebar-avatar: /img/about_me_img.jpg    # use absolute URL, seeing it's used in
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     xodarap
+weibo_username:     paradox_town
+zhihu_username:     
 github_username:    paradoxtown
-facebook_username:  
+facebook_username:  金泽
 jianshu_username:   
 #twitter_username:   qiubaiying
 

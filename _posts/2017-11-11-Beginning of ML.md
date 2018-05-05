@@ -6,6 +6,7 @@ date:       2017-11-11
 author:     paradox
 header-img: img/post_2.jpg
 catalog: true
+mathjax: true
 tags:
     - Machine Learning 
     - Tensorflow

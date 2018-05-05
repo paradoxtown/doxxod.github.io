@@ -7,6 +7,7 @@ author:     paradox
 header-img: img/post_4.jpg
 catalog: true
 tags:
+mathjax: true
     - Machine Learning 
     - Tensorflow
     - Full Connected File
@@ -209,7 +210,7 @@ def do_eval(sess,
 ```
 <b>在进入循环前</b>，我们应该先调用mnist.py文件中的`evaluation`函数，传入的`logits`和标签参数要与`loss`函数的一致.这样做是为了先构建`Eval`操作.
 `eval_correct = mnist.evaluation(logits, labels_placeholder)`中
-再更复杂的场景中，要先隔绝`data_sets.test`测试数据集，使用大量超参数优化调整$(hyperparameter tuning)$之后才进行检查.
+再更复杂的场景中，要先隔绝`data_sets.test`测试数据集，使用大量超参数优化调整$(hyper\ parameter\  tuning)$之后才进行检查.
 
 另:`fill_feed_dict`函数会索要下一个批次batch_size的图像和标签.
 

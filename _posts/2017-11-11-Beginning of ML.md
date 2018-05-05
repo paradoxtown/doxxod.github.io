@@ -12,6 +12,7 @@ tags:
     - Tensorflow
 ---
 
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 ## 0.开始MNIST
 
 $Tensorflow$使用图$(graph)$来表示计算的编程系统，图中的节点被称为 $op(operation)$.一个$op$获得零个或多个张量$(tensor)$执行计算，产生零个或多个张量.<br>

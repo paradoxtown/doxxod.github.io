@@ -12,9 +12,8 @@ tags:
     - Tensorflow
 ---
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 ## 0.开始MNIST
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 $Tensorflow$使用图$(graph)$来表示计算的编程系统，图中的节点被称为 $op(operation)$.一个$op$获得零个或多个张量$(tensor)$执行计算，产生零个或多个张量.<br>
 <b>张量</b>是一个按<b>类型</b>划分的多维数组.
 图是一种对计算的抽象描述.在计算之前，图必须在<b>会话</b>$(Session())$中被启动. 会话将图的$op$分发到如$CPU$或$GPU$之类的设备上，同时提供执行$op$的方法.这些方法执行之后，将产生张量返回。

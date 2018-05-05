@@ -22,8 +22,8 @@ mathjax: true
 - <b>question_1:</b>为什么构建多个连接层，也就是为什么构建多感知器？
   多感知器可以学习非线性函数.
 
-##构建图表
-###推理环节$(inference)$
+## 构建图表
+### 推理环节$(inference)$
 定义内容在`mnist.py`中.
 ```py3
 def inference(images, hidden1_units, hidden2_units):

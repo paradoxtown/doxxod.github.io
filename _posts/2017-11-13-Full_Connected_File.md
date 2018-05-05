@@ -25,7 +25,7 @@ mathjax: true
 ## 构建图表
 ### 推理环节$(inference)$
 定义内容在`mnist.py`中.
-```py3
+```python
 def inference(images, hidden1_units, hidden2_units):
     with tf.name_scope('hidden1'):
         weights = tf.Variable(
@@ -60,7 +60,7 @@ def inference(images, hidden1_units, hidden2_units):
 - <b>question_3:</b>为什么生成一个随机分布？（待解决）
 
 ### 损失$(loss)$
-```py3
+```python
 def loss(logits, lables):
     labels = tf.to_int64(labels)
     cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(
@@ -70,7 +70,7 @@ def loss(logits, lables):
 返回该批次的平均损失.
 
 ### 训练$(training)$
-```py3
+```python
 def training(loss, learning_rate):
     tf.summary.scalar('loss', loss)
     optimizer = tf.train.GradientDescentOptimizer(learning_rate)
@@ -86,7 +86,7 @@ def training(loss, learning_rate):
 至此我们的图表已经基本构建完成.
 
 ### 评估$(evauation)$
-```py3
+```python
 def evaluation(logits, labels):
     correct = tf.nn.in_top_k(logits, labels, 1)
     #tf.nn.in_top_k操作指的是如果在k个最有可能的预测中可以发现真的标签，
@@ -96,7 +96,7 @@ def evaluation(logits, labels):
 ```
 
 ## 训练模型
-```py3
+```python
 def run_training():
     data_sets = input_data.read_data_sets(FLAGS.input_data_dir, FLAGS.fake_data)
 
@@ -184,7 +184,7 @@ def run_training():
 
 ### 评估模型&构建评估图图表&评估图标的输出
 在上面的代码中我们可以看见`do_eval`函数被调用了三次，分别使用训练数据集、验证数据集和测试数据集对模型进行评估.其中`do_eval`的代码如下:
-```py3
+```python
 def do_eval(sess,
             eval_correct,
             images_placeholder,

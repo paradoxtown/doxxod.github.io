@@ -104,8 +104,8 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "another blog",
-        href: "http://blog.leanote.com/paradox"
+        title: "no where",
+        href: ""
     },
     {
         title: "some where",

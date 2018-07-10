@@ -4,15 +4,13 @@ title:     python course for dox
 subtitle:   
 date:       2018-07-10
 author:     paradox
-header-img: img/post_1.0.jpg
+header-img: img/post-bg-coffee.jpeg
 catalog: true
 mathjax: true
 tags:
 ---
 
 # Course Arrangement
-
-$paradox\ 2018-7-10$
 
 ## Project 1
 
@@ -89,7 +87,7 @@ $paradox\ 2018-7-10$
 
 ## 注释
 
-- 单行缩进
+#### 单行缩进
 
 ```python
 a = 3 # 对a这个变量进行赋值
@@ -97,7 +95,7 @@ a = 3 # 对a这个变量进行赋值
 
 `#`后面的就是注释内容，注释内容不会对代码造成任何影像，完全是为了是的你的程序有更好的可读性，更容易让别人和自己理解，这点对于初学者来说，尤其重要。
 
-- 多行注释
+#### 多行注释
 
 ```python
 '''

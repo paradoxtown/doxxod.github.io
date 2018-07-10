@@ -164,13 +164,13 @@ python中可以使用单引号`'`，双引号`"`，三引号`'''`或者`"""`，�
 ```python
 paradox = "jinze"
 dox = "zhouyuxiang"
-paradox_dox = """jinze
-and 
-zhouyuxiang
+paradox_dox = """jinze \ 
+and \
+zhouyuxiang \
 """
 ```
 
-##标识符
+## 标识符
 
 标识符有字母、数字、下划线组成，但是开头不能是数字，可以是下划线、字母，但是以下划线开头的表示符都有特殊的意义。
 标识符对大小写敏感，例如`paradox`和`Paradox`是不同的表示符。

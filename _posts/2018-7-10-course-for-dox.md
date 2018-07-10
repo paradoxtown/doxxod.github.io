@@ -135,31 +135,22 @@ if jinze is handsome:
 多行语句就是本来一个完整的句子太长，放在一行及不仅破坏了代码的美观性，还破坏了可读性。
 
 整改前：
-
 ```python
 if paradox is not handsome and dox is not beautiful or paradox is handsome and dox is not beautiful or paradox is not handsome and dox is beautiful or paradox is handsome and dox is beautiful:
-    
 ```
-
 多行整改后：
-
 ```python
 if paradox is not handsome and dox is not beautiful 
     or paradox is handsome and dox is not beautiful 
     or paradox is not handsome and dox is beautiful 
     or paradox is handsome and dox is beautiful:
 ```
-
 整改前：
-
 ```python
 total = item_ont + item_two + item_three
 ```
-
 （这句话其实不算长，不用整改也行，只是举个例子）
-
 整改后：
-
 ```python
 total = item_one + \
 		item_two + \
@@ -182,7 +173,6 @@ zhouyuxiang
 ##标识符
 
 标识符有字母、数字、下划线组成，但是开头不能是数字，可以是下划线、字母，但是以下划线开头的表示符都有特殊的意义。
-
 标识符对大小写敏感，例如`paradox`和`Paradox`是不同的表示符。
 
 ## 常量
@@ -193,17 +183,15 @@ zhouyuxiang
 
 变量存贮内存中的值，因此创建变量时，就会在内存中开辟一段内存空间，用来保存我们的值。
 
-- 变量赋值：
+#### 变量赋值
 
 ```python
 a = 100 # 这句话被执行之后，以后a就代表100了
 name = "dox" # 以后name这个变量名就表示dox了
 dox = "zhouyuxiang" # 以后dox这个变量名就表示zhouyuxiang了
 ```
-
 那么上面的`dox`和`name`有什么区别呢？
-
-- 多变量赋值
+#### 多变量赋值
 
 ```python
 a = b = c = 1 # 以后a,b,c都将表示1

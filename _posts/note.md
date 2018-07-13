@@ -30,5 +30,3 @@ tags:
 
 ## GCN
 
-由*Modeling Text with Graph Convolutional Network for Cross-Modal Information Retrieval*理解GCN网络。
-

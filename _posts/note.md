@@ -1,0 +1,34 @@
+---
+layout:     post
+title:      科研学习笔记
+subtitle:   NELIST
+date:       2018-07-12
+author:     paradox
+header-img: img/post-bg-unix-linux.jpg
+catalog: true
+mathjax: true
+tags: 
+    - note
+---
+
+## 词包模型$(bag\ of\ words)$
+
+用整个语料库构建一个$dictionary$，这个$dictionary$中记录的是整个语料库中互不相同的单词（相对于词干化后的），$dictionary$中有多少个单词，就是我们接下来为每一篇$text$构建的向量的维度，向量的每一维表示的是，该单词在这篇$text$中出现的次数。
+
+## 语料预处理
+
+- 删除标点符号
+- 删除停用词
+- 词干化
+- 记录低频词，删除低频词
+
+## TF-IDF
+
+- **词频**： $tf_{i, j} = \frac{n_{i, j}}{\sum _k n_{k, j}}​$
+- **逆向文件频率$(inverse\ document\ frequency, idf)$**：是一个词语普遍重要性的度量。某一特定的词语的$idf$里可以由总文件数目除以包含该词语的文件数目，再将得到的商取以$10$为底的对数得到：$idf_i = log\frac{|D|}{|\{j : t_i \in d_j\}|}$
+- 最后两者相乘：$tf-idf_{i,j} = tf_{i.j} * idf_i$
+
+## GCN
+
+由*Modeling Text with Graph Convolutional Network for Cross-Modal Information Retrieval*理解GCN网络。
+

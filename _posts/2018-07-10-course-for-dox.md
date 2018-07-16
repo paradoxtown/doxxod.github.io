@@ -147,7 +147,7 @@ if paradox is not handsome and dox is not beautiful
 ```
 整改前：
 ```python
-total = item_ont + item_two + item_three
+total = item_one + item_two + item_three
 ```
 （这句话其实不算长，不用整改也行，只是举个例子）
 整改后：
@@ -169,7 +169,7 @@ dox = "zhouyuxiang"
 ## 标识符
 
 标识符有字母、数字、下划线组成，但是开头不能是数字，可以是下划线、字母，但是以下划线开头的表示符都有特殊的意义。
-标识符对大小写敏感，例如`paradox`和`Paradox`是不同的表示符。
+标识符对大小写敏感，例如`paradox`和`Paradox`是不同的标识符。
 
 ## 常量
 
@@ -200,7 +200,7 @@ a = b = c = 1 # 以后a,b,c都将表示1
 - 整型`(int)`：顾名思义就是整数，可以表示的范围是：$[-2^{31} , 2^{31} -1]$
 - 浮点数`(float)`：就是小数
 - 长整型`(long)`：可以表示更大范围的整数
-- 复数`(float)`
+- 复数`(complex)`
 
 ### 字符串
 
@@ -218,38 +218,38 @@ a = b = c = 1 # 以后a,b,c都将表示1
 - 索引：
 
   ```python
-  a = "abcdefg"
-  print(a[0])
-  print(a[-1])
+  >>> a = "abcdefg"
+  >>> print(a[0])
+  >>> print(a[-1])
   ```
 
   ```pythton
-  >>> a
+  a
   ```
 
 - 分割：
 
   ```python
-  dox = "abc def ghi jkl"
-  dox_list = dox.split() # 默认按空格分隔
-  print(dox_list)
+  >>> dox = "abc def ghi jkl"
+  >>> dox_list = dox.split() # 默认按空格分隔
+  >>> print(dox_list)
   ```
 
   ```python
-  >>> ["abc", "def", "ghi", "jkl"]
+  ["abc", "def", "ghi", "jkl"]
   ```
 
 - 合并：
 
   ```python
-  dox = "dox"
-  paradox = "paradox"
-  friends = dox + " and " + paradox
-  print(friends)
+  >>> dox = "dox"
+  >>> paradox = "paradox"
+  >>> friends = dox + " and " + paradox
+  >>> print(friends)
   ```
 
-  ```python
-  >>> dox and paradox
+  ```
+  dox and paradox
   ```
 
 一个字符串的结构其实类似于一个列表结构，所有列表可以进行的操作，在字符串上基本上都可以进行。
@@ -287,7 +287,7 @@ dox
 那我们怎么修改列表中的元素呢，比如我要把`dox_list[0]`变成`jinze`。我们执行以下操作：
 
 ```python
-dox_list[0] = 'jinze'
+>>> dox_list[0] = 'jinze'
 >>> dox_list[0]
 jinze
 ```
@@ -463,7 +463,7 @@ print("dox比paradox大" + str(n) + "个月")
 
 这里有三个小问题留给你：
 
-- 为什么我要使用`int(intput())`而不是`input()`？
+- 为什么我要使用`int(input())`而不是`input()`？
 - `%d`是什么意思？为什么不会输出"dox比paradox大%d个月"，而是输出了"dox比paradox大3个月"？
 - 为什么第二种输出方式`n`要用`str(n)`的形式？
 

@@ -77,7 +77,13 @@ tags:
 
 ## Project 4
 
-- 
+- `I/O`操作
+  - 文件的读取
+    - 不同的打开模式
+  - 文件的写入
+    - 不同的写入模式
+  - `File`对象的属性
+  - `os`模块
 
 # Project 2
 
@@ -915,18 +921,18 @@ del dict # 删除这个字典
 
 | 序号 | 函数及描述                                                   |
 | ---- | ------------------------------------------------------------ |
-| 1    | `dict.clear()`删除字典内所有元素 |
-| 2    | `dict.copy()`返回一个字典的浅复制 |
+| 1    | `dict.clear()`删除字典内所有元素                             |
+| 2    | `dict.copy()`返回一个字典的浅复制                            |
 | 3    | `dict.fromkeys(seq[, val\])`创建一个新字典，以序列 seq 中元素做字典的键，`val` 为字典所有键对应的初始值 |
 | 4    | `dict.get(key, default=None)` 返回指定键的值，如果值不在字典中返回default值 |
-| 5    | `dict.has_key(key)` 如果键在字典dict里返回`True`，否则返回`False` |
-| 6    | `dict.items()`以列表返回可遍历的(键, 值) 元组数组 |
-| 7    | `dict.keys()`以列表返回一个字典所有的键 |
+| 5    | ~~`dict.has_key(key)` 如果键在字典dict里返回`True`，否则返回`False`~~(python2用法，我们是python3)，可以用`key in dict.keys()`来表示 |
+| 6    | `dict.items()`以列表返回可遍历的(键, 值) 元组数组            |
+| 7    | `dict.keys()`以列表返回一个字典所有的键                      |
 | 8    | `dict.setdefault(key, default=None)` 和`get()`类似, 但如果键不存在于字典中，将会添加键并将值设为default |
-| 9    | `dict.update(dict2)` 把字典dict2的键/值对更新到dict里 |
-| 10   | `dict.values()` 以列表返回字典中的所有值 |
+| 9    | `dict.update(dict2)` 把字典dict2的键/值对更新到dict里        |
+| 10   | `dict.values()` 以列表返回字典中的所有值                     |
 | 11   | `pop(key[,default\])` 删除字典给定键 `key` 所对应的值，返回值为被删除的值。key值必须给出。 否则，返回`default`值。 |
-| 12   | `popitem()` 随机返回并删除字典中的一对键和值。 |
+| 12   | `popitem()` 随机返回并删除字典中的一对键和值。               |
 
 #### 小练习
 

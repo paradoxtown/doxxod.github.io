@@ -1112,7 +1112,7 @@ plt.show()
 
 就可以得到：
 
-![1532692392570](E:\paradoxtown.github.io\img\1532692392570.png)
+![1532692392570](https://github.com/paradoxtown/paradoxtown.github.io/blob/master/img/1532692392570.png?raw=true)
 
 `from matplotlib import pyplot as plt`的意思就是从`matplotlib`这个模块中调用`pyplot`并将其简称为`plt`。怎么样看到这段短短的代码画出了四幅图是不是开始觉得python酷炫了起来。
 

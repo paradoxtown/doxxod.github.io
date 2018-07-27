@@ -875,7 +875,6 @@ del dict # 删除这个字典
 - 注意函数块内的缩进，块内代码首先是从属于上面函数的定义的，其他缩进规则个之前所说一样；
 
 ```python
-# exampel
 def get_sum(n):
     sum = 0
     for i in range(1, n + 1):
@@ -901,17 +900,17 @@ n = int(input())
 get_sum(n)
 ```
 
-### 变量的生命周期
+#### 变量的生命周期
 
-#### 全局变量
+##### 全局变量
 
 全局变量就是在整个代码的任意地方都可以被调用的变量。
 
-#### 私有变量
+##### 私有变量
 
 只能被定义它的代码块内部访问，其他地方均不能访问。
 
-#### 实例
+##### 实例
 
 ```python
 a = 99
@@ -940,7 +939,7 @@ NameError: name 'b' is not defined
 
 `NameError`那一行就很明确的指出了你的`b`没有被定义，因为`b`的生命周期就只有一个函数那么短，它只在函数中定义了，并在函数结束时，结束了生命，因此其它地方会认为`b`这个名字并没有被定义。
 
-### 参数
+#### 参数
 
 ```python
 def sum1(a, b):
@@ -982,3 +981,157 @@ sum1(b=2, a=1)
 
 #### 函数的返回值
 
+`return`表示退出函数，可以带参数，这个参数同样可以是任意类型的。没有带参数的表示返回`None`。
+
+```python
+def sum_(a, b):
+    total = a + b
+    print("1.a + b = " + str(total))
+    return total
+total = sum_(10, 20)
+print("2.a + b = " + str(total)
+```
+
+运行结果是：
+
+```
+1.a + b = 30
+2.a + b = 30
+```
+
+函数外的`total`接收到的值是函数**返回**给它的。
+
+另外一个例子，稍难一点的：
+
+```python
+n = 10
+def dig(depth):
+    if depth == n:
+        return
+    print(depth)
+   	dig(depth + 1)
+dig(10)
+```
+
+输出:
+
+```python
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+```
+
+你看这个`dig`函数像不像在打洞在挖掘，往下挖到$10$时，不挖了，**直接`return`退出**，因此就不会执行后面的代码了（这里涉及到的思想是**递归**）。
+
+再看，求费波纳列数列第$n$个数：
+
+```python
+def fib(n):
+    if n == 1 or n == 2:
+        return 1
+    return fib(n - 1) + fib(n - 2)
+print(fib(10))
+```
+
+输出：
+
+```
+55
+```
+
+### 模块
+
+我们有时写了一些方法，具有普适作用，比如我们想要求斐波那契额第$n$个数时，我们就可以调用上面的方法，我们可以把这个函数复制粘贴到我们的新程序中，但是有时候我们写的方法很长很复杂， 有很多的依赖关系，我们直接复制粘贴进我们的新程序中总不是一个好的方法，这时候我们就需要用到模块这个概念。
+
+模块非常重要，为什么重要，就是因为，在python中，有很多大牛，很多科学家，写了成千上万的方法，这些方法，自己去实现非常复杂，因此我们通过引用这些大牛或者某个机构或者python内置的模块来调用这些方法，就可以减轻我们的工作量。python也正是因为这成千上万的模块而变得非常强大。
+
+#### 模块的引入
+
+**第一种**
+
+比如我们要引入python中的`math`库
+
+```python
+import math
+print(math.e)
+print(math.pi)
+```
+
+输出是：
+
+```
+2.718281828459045
+3.141592653589793
+```
+
+也就是python中默认的自然底数和圆周率。从这里你也就看到了，想要引用模块中的内容就是：模块名 + 点 + 内容。我们再看引用模块中的方法，比如我们要求两个数之间的最大公因数：
+
+```python
+import math
+print(math.gcd(55, 30))
+```
+
+```
+5
+```
+
+其中我们就是通过`math.gcd()`来调用该方法的。
+
+我们通过`import math as m`来给`math`简称`m`，这里`math`模块名字还是比较简短的，简不简称无所谓。
+
+但像`tensorflow`这样的名字稍长的我们就最好简称一下`import tensorflow as tf`，`import numpy as np`。
+
+在以后的高阶内容的学习中你可能会经常碰见`panda`,`numpy`,`scipy`等等模块，没有这些模块，你学了python也没有用。
+
+**第二种**
+
+有些模块非常庞大，里面有许多小模块，我们每次都把整个大模块全都引用进来显然不是什么聪明的做法。例如我们要画一张图表：
+
+```
+from matplotlib import pyplot as plt
+import numpy as np
+
+np.random.seed(19680801)
+data = np.random.randn(2, 100)
+
+fig, axs = plt.subplots(2, 2, figsize=(5, 5))
+axs[0, 0].hist(data[0])
+axs[1, 0].scatter(data[0], data[1])
+axs[0, 1].plot(data[0], data[1])
+axs[1, 1].hist2d(data[0], data[1])
+
+plt.show()
+```
+
+就可以得到：
+
+![1532692392570](C:\Users\ze\AppData\Local\Temp\1532692392570.png)
+
+`from matplotlib import pyplot as plt`的意思就是从`matplotlib`这个模块中调用`pyplot`并将其简称为`plt`。怎么样看到这段短短的代码画出了四幅图是不是开始觉得python酷炫了起来。
+
+#### 模块的安装
+
+我们安装的python并不是一开始就有那么多模块的，如果我们的python一开始装了那么多模块，我们的python就会变得非常巨大，而且模块是取之不尽用之不竭的，时时刻刻就会有新的模块产生，而且我们自己就可以为python写模块。
+
+因此我们只是在需要哪个模块的时候安装上就是了。
+
+- 检查是否安装`pip`
+- 用`pip install module_name`来安装库
+- `pip`会从某几个指定的模块库里面下载我们想要的模块
+- 很多模块之间又相互依赖关系，我们想要下某个模块的时候，往往要下载另一个模块，`Anaconda`很好的为我们解决了这个问题
+- 很多模块库都是国外的，因此有时下载非常慢，或者根本就不能下载，国内的清华镜像就给我提供了好东西
+
+执行：
+
+```
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+```
+
+清华镜像每5分钟同步一次，基本能保持最新版本。

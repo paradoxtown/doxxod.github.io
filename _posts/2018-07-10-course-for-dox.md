@@ -1283,15 +1283,70 @@ os.removedirs("./dir")
 
 目前就以上的模块内函数比较有用。在python中一个模块的函数就可能有无数个，我们不可能全都记住，所以在我们需要什么方法的时候，我们再去查找有没有可以完成我们想要的方法的模块。当然常用的库，我们要很熟才行，就像我之前说的`pandas`，`numpy`，`matplotlib`。
 
+### `Excel`操作
+
+[资料](https://github.com/paradoxtown/documents/blob/master/%E3%80%8A%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%AC9%E6%AC%A1%E8%AF%BE%E4%BB%B6_0507.pdf)
+
+# Project 6
+
+
+
 ---
 
 *基础部分完结*
 
 ---
 
-#  Project 6
+#  Project 7
 
 ## 练习题
 
 - [够了够了](https://admin.buaacoding.cn/problem/1383/index)
 
+- **全排列**
+
+  全排列的意思就是将$1-n$这$n$个数的所有排列情况按照一定的顺序表示出来，例如$1-3$的全排列：
+
+  ```
+  1 2 3
+  1 3 2
+  2 1 3
+  2 3 1
+  3 1 2
+  3 2 1
+  ```
+
+  以上是按照字典序的顺序表示的。
+
+  现在要你写一个程序，输入是一个数$n$，输出是$1-n$的按字典序排列的全排列。
+
+  ```python
+  n = int(input())
+  a = [0] * (n + 1)
+  b = [0] * (n + 1)
+  
+  def permutation(m):
+      if m == n + 1:
+          for i in range(1, n + 1):
+              print(a[i], end="")
+          print()
+          return
+      for i in range(1, n + 1):
+          if b[i] == 0:
+              b[i] = 1
+              a[m] = i
+              permutation(m + 1)
+              b[i] = 0
+  
+  permutation(1)
+  ```
+
+  理解一下递归的思想，不过不懂也没有关系。
+
+- [实验4-3](https://admin.buaacoding.cn/problem/1231/index)
+
+- [实验4-4](https://admin.buaacoding.cn/problem/1232/index)双列表
+
+- [实验5-1](https://admin.buaacoding.cn/problem/1259/index)字典
+
+- [实验5-3](https://admin.buaacoding.cn/problem/1261/index)字典

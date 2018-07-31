@@ -98,8 +98,14 @@ tags:
     - 不同的写入模式
   - `File`对象的属性
   - `os`模块
+  - `Excel`操作
 
 ## Project 6
+
+- 数据可视化
+  - 使用`Matplotlib`绘图
+
+## Project 7
 
 - 基础知识练习
   - 我得去找一下题

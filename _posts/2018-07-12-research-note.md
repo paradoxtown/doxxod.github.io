@@ -341,7 +341,7 @@ $k$近邻算法。
 
 $LSTM$总共有$3$个$gate$，公式$input$，$forget$和$output$，所以总共有四个$input$，一个$output$。
 
-我们要做$LSTM$的模型，只需要将原来的neuron替换成$LSTM\ cell$。 
+我们要做$LSTM$的模型，只需要将原来的$neuron$替换成$LSTM\ cell​$。 
 
 ![1537285420474](https://github.com/paradoxtown/paradoxtown.github.io/blob/master/img/complex_lstm_cell.png?raw=true)
 

@@ -52,7 +52,7 @@ tags:
 
 ![preview](https://github.com/paradoxtown/paradoxtown.github.io/blob/master/img/note1.jpg?raw=true) 
 
-$CNN$是$Computer\ Vision$中要的模型，它可以有效的提取空间特征。但是有一点值得注意的就是他提取的数据类型往往是排列整齐的像素矩阵，也就是很多论文中提到的$Euclidean\ Structure$。
+$CNN$是$Computer\ Vision$中要的模型，它可以有效的提取空间特征。但是有一点值得注意的就是他提取的数据类型往往是**排列整齐的像素矩阵**，也就是很多论文中提到的$Euclidean\ Structure$。
 
 但是在科学研究中还有很多$Non\ Euclidean\ Structure$数据，如社交网络、信息网络中就有很多类似的结构。这样的网络结构就是图论中的拓扑图。
 
@@ -60,7 +60,7 @@ $CNN$是$Computer\ Vision$中要的模型，它可以有效的提取空间特征
 
 $spectral\ domain$是$GCN$的理论基础，这种思路就是希望借助图谱的理论来实现拓扑图上的卷积操作。
 
-$spectral\ domain\ theory​$简单的概括就是借助**图的拉普拉斯矩阵的特征值**特征向量来研究图的性质。
+$spectral\ domain\ theory$简单的概括就是借助**图的拉普拉斯矩阵的特征值和特征向量**来研究图的性质。
 
 ### 拉普拉斯矩阵
 
@@ -303,4 +303,48 @@ oranges:  (-0.35609, 0.21854, 0.080944, ..., -0.35413, 0.38511, -0.070976)
   embedded_word_ids = tf.nn.embedding_lookup(word_embeddings, word_ids)
   ```
 
-- 
+
+
+---
+
+## wordnet
+
+>wordnet包含了语义信息，所以有别于通常意义上的字典。
+>
+>wordnet根据词条的意义将他们分组，每一个具有相同意义的词条组成一个$synset$（同义词集合）。wosdnet为每一个$synset$提供了简短，概要的定义，并记录不同$synset$之间的语义关系。
+>
+>- 它既是一个字典，有时一个词典，它比单纯的词典或者词典都更加易于使用；
+>- 支持自动的文本分析以及人工智能的应用。
+
+## KNN
+
+k近邻算法。
+
+## DNN tips
+
+- $train$上表现好而$test$上表现不好往往是$over fitting$造成的，但也不一定是其造成的。
+- $test$上表现不好，要先检查$train$上表现好不好。
+- 假设$test$上表现不好：
+  - 换$activation function$：$network$叠得很深的时候会出现$vanishing\ gradient\ problem$现象。前几层的$gradient$比较小，后几层的gradient比较大，前几层比较慢，后记层比较快，当后几层已经收敛了，前几层还没有收敛，参数就停止更新了，而后几层的input都是由前几层来的，因此收敛的地方很大概率是错的（$sigmoid$)。理论上可以设计动态的$learning rate$。现在主要可以使用$relu$，还有就是让$network$自己学出一个$activation function$，用$maxout$。
+  - 改变优化方法：$RMSProp$，因为我们有时候需要不一样的learning rate。把惯性加入到$gradient decent$中去，$Momentum$：前一次所移动的方向当作惯性的方向。$RMSProp + Momentum$ 就是 $adam$。
+  - Early Stopping：理论上loss是会越来越小，除非learning rate设置错误。又时候我们的train上面，loss是不断减小的，但是test的loss有可能会先减小后增大，因此这时候我们加一个$validation set$。
+  - $Regularization$：还要是参数的值越小（越接近零宇越好）越好，也叫$weight\ decay$。$ L1\ regularization\ L2\ Regularization$。
+  - $Dropout$：$update$参数之前，我们都对每一个$neuron$做$ensemble$。有一些neuron就会以一定的几率消失掉。所以每一次的$network$都会不一样。好像在做一个$function$的平均。$Dropout$是$ensemble$的终极版本。在做Dropout之后test的weight得是train的weight的$(1-p\%)$，其中$p%$是$ensemble$的几率。
+
+## RNN
+
+### LSTM
+
+我们之前把前面运算出来的output存到memory中以期达到记忆的能力，而现在比较流行的memory是long short-term memory（比较长的短期记忆）。
+
+![1537284081307](C:\Users\ze\AppData\Roaming\Typora\typora-user-images\1537284081307.png)
+
+LSTM总共有3个gate，公式input，forget和output，所以总共有四个input，一个output。
+
+我们要做LSTM的模型，只需要将原来的neuron替换成LSTM cell。 
+
+![1537285420474](C:\Users\ze\AppData\Roaming\Typora\typora-user-images\1537285420474.png)
+
+比较复杂版本的LSTM。
+
+现在有简化版的LSTM是GRU，只有两个gate，参数减少了，但是效果差不多。

@@ -110,5 +110,9 @@ friends: [
     {
         title: "some where",
         href: "https://xoddox.weebly.com"
+    },
+    {
+        title: "necrolyte",
+        href: "https://necrolyte.site"
     }
 ]

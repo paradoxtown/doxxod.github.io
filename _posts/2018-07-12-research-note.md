@@ -309,16 +309,16 @@ oranges:  (-0.35609, 0.21854, 0.080944, ..., -0.35413, 0.38511, -0.070976)
 
 ## wordnet
 
->wordnet包含了语义信息，所以有别于通常意义上的字典。
+>$wordnet$包含了语义信息，所以有别于通常意义上的字典。
 >
->wordnet根据词条的意义将他们分组，每一个具有相同意义的词条组成一个$synset$（同义词集合）。wosdnet为每一个$synset$提供了简短，概要的定义，并记录不同$synset$之间的语义关系。
+>$wordnet$根据词条的意义将他们分组，每一个具有相同意义的词条组成一个$synset$（同义词集合）。wosdnet为每一个$synset$提供了简短，概要的定义，并记录不同$synset$之间的语义关系。
 >
 >- 它既是一个字典，有时一个词典，它比单纯的词典或者词典都更加易于使用；
 >- 支持自动的文本分析以及人工智能的应用。
 
 ## KNN
 
-k近邻算法。
+$k$近邻算法。
 
 ## DNN tips
 
@@ -335,13 +335,13 @@ k近邻算法。
 
 ### LSTM
 
-我们之前把前面运算出来的output存到$memory$中以期达到记忆的能力，而现在比较流行的$memory$是$long\ short-term\ memory$（比较长的短期记忆）。
+我们之前把前面运算出来的$output$存到$memory$中以期达到记忆的能力，而现在比较流行的$memory$是$long\ short-term\ memory$（比较长的短期记忆）。
 
 ![1537284081307](https://github.com/paradoxtown/paradoxtown.github.io/blob/master/img/simple_lstm_cell.png?raw=true)
 
 $LSTM$总共有$3$个$gate$，公式$input$，$forget$和$output$，所以总共有四个$input$，一个$output$。
 
-我们要做LSTM的模型，只需要将原来的neuron替换成LSTM cell。 
+我们要做$LSTM$的模型，只需要将原来的neuron替换成$LSTM\ cell$。 
 
 ![1537285420474](https://github.com/paradoxtown/paradoxtown.github.io/blob/master/img/complex_lstm_cell.png?raw=true)
 

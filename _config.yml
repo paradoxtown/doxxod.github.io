@@ -104,15 +104,19 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "no where",
+        title: "nowhere",
         href: ""
     },
     {
-        title: "some where",
+        title: "somewhere",
         href: "https://xoddox.weebly.com"
     },
     {
         title: "necrolyte",
         href: "https://necrolyte.site"
+    },
+    {
+        title: "wdl4706",
+        href: "https://16061182.club"
     }
 ]

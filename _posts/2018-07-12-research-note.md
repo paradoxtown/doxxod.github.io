@@ -335,16 +335,16 @@ k近邻算法。
 
 ### LSTM
 
-我们之前把前面运算出来的output存到memory中以期达到记忆的能力，而现在比较流行的memory是long short-term memory（比较长的短期记忆）。
+我们之前把前面运算出来的output存到$memory$中以期达到记忆的能力，而现在比较流行的$memory$是$long\ short-term\ memory$（比较长的短期记忆）。
 
-![1537284081307](C:\Users\ze\AppData\Roaming\Typora\typora-user-images\1537284081307.png)
+![1537284081307](https://github.com/paradoxtown/paradoxtown.github.io/blob/master/img/simple_lstm_cell.png?raw=true)
 
-LSTM总共有3个gate，公式input，forget和output，所以总共有四个input，一个output。
+$LSTM$总共有$3$个$gate$，公式$input$，$forget$和$output$，所以总共有四个$input$，一个$output$。
 
 我们要做LSTM的模型，只需要将原来的neuron替换成LSTM cell。 
 
-![1537285420474](C:\Users\ze\AppData\Roaming\Typora\typora-user-images\1537285420474.png)
+![1537285420474](https://github.com/paradoxtown/paradoxtown.github.io/blob/master/img/complex_lstm_cell.png?raw=true)
 
-比较复杂版本的LSTM。
+比较复杂版本的$LSTM$。
 
-现在有简化版的LSTM是GRU，只有两个gate，参数减少了，但是效果差不多。
+现在有简化版的$LSTM$是$GRU$，只有两个$gate​$，参数减少了，但是效果差不多。

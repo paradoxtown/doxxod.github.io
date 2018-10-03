@@ -15,6 +15,15 @@ tags:
 
 用整个语料库构建一个$dictionary$，这个$dictionary$中记录的是整个语料库中互不相同的单词（相对于词干化后的），$dictionary$中有多少个单词，就是我们接下来为每一篇$text$构建的向量的维度，向量的每一维表示的是，该单词在这篇$text$中出现的次数。
 
+## $word2vec$
+
+$word2vec$是词嵌入$(word embedding)$的一种，词嵌入就是将词转化成数值形式，嵌入到一个数字空间。
+
+- $ski-gram$：用一个词作为输入，来预测它的上下文；
+- $cbow$：用一个词的上下文作为输入，来预测这个词的本身。
+
+$word2vec$模型的原始输入是$one-hot​$数据。
+
 ## 语料预处理
 
 - 删除标点符号
@@ -347,4 +356,26 @@ $LSTM$总共有$3$个$gate$，公式$input$，$forget$和$output$，所以总共
 
 比较复杂版本的$LSTM$。
 
-现在有简化版的$LSTM$是$GRU$，只有两个$gate​$，参数减少了，但是效果差不多。
+现在有简化版的$LSTM$是$GRU$，只有两个$gate$，参数减少了，但是效果差不多。
+
+## transE
+
+知识库通常可以看作是三元组的集合，所谓三元组，也就是（头实体，关系，尾实体）的形式，头实体和尾实体统称为实体，简化为$(\vec h, \vec r, \vec t)$。
+
+$transE$模型认为一个正确的三元组的$embedding(\vec h, \vec r, \vec t)$会满足$\vec h + \vec r = \vec t$，也就是说，头实体$embedding$加上关系$embedding$会等于尾实体$embedding$。
+
+定义势能函数：$f(h, r, t) = ||\vec h + \vec r - \vec t||_2$，也即欧几里得范数，表示两点之间的欧氏距离。
+
+对于一个三元组来说，我们希望是能越低越好，而对于一个错误的三元组，我们希望势能越高越好。这样我们得到目标函数：
+$$
+min\sum_{(\vec h, \vec r, \vec t) \in \Delta}\sum_{(\vec h', \vec r', \vec t')\in \Delta'}[\gamma + f(\vec h, \vec r, \vec t) - f(\vec h', \vec r',\vec t')]_+
+$$
+其中：
+
+- $\Delta$表示正确的三元组集合；
+- $\Delta'$表示错误的三元组集合；
+- $\gamma$表示正负样本之间的距离，是一个常数；
+- $[x]_+$表示$max(0, x)$。
+
+为了方便训练，避免**过拟合**，通常会进行$normalization$：$||h||\le1,||r||\le1,||t||\le1$。
+

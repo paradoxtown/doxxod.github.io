@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      科研学习笔记
+title:      Research Note
 subtitle:   NELIST
 date:       2018-07-12
 author:     paradox

@@ -7,7 +7,7 @@ author:     paradox
 header-img: img/OSAKA1.jpg
 catalog: true
 mathjax: false
-tags:
+tags: Travel
 ---
 
 没心情写游记，写点简短的攻略。

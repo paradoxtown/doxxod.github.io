@@ -109,7 +109,7 @@ tags:
 
   ![IMG_5564](https://raw.githubusercontent.com/paradoxtown/paradoxtown.github.io/master/img/IMG_5564.JPG)
 
-  ![IMG_5763](..\img\IMG_5763.JPG)
+  ![IMG_5763](https://raw.githubusercontent.com/paradoxtown/paradoxtown.github.io/master/img/IMG_5763.JPG)
 
   ![night](https://raw.githubusercontent.com/paradoxtown/paradoxtown.github.io/master/img/night.jpg)
 
@@ -119,7 +119,7 @@ tags:
 
   ![IMG_5773](https://raw.githubusercontent.com/paradoxtown/paradoxtown.github.io/master/img/IMG_5773.JPG)
 
-  ![IMG_5799](..\img\IMG_5799.JPG)
+  ![IMG_5799](https://raw.githubusercontent.com/paradoxtown/paradoxtown.github.io/master/img/IMG_5799.JPG)
 
   ![IMG_5814](https://raw.githubusercontent.com/paradoxtown/paradoxtown.github.io/master/img/IMG_5814.JPG)
 

@@ -4,7 +4,7 @@ title:     Course Arrangement
 subtitle:   
 date:       2018-07-26
 author:     paradox
-header-img: img/post-bg-coffee.jpeg
+header-img: img/post-bg-coffee.jpg
 catalog: true
 mathjax: true
 tags:	

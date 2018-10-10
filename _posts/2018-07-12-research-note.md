@@ -174,7 +174,7 @@ $k$近邻算法。
 
 $LSTM$总共有$3$个$gate$，公式$input$，$forget$和$output$，所以总共有四个$input$，一个$output$。
 
-我们要做$LSTM$的模型，只需要将原来的$neuron$替换成$LSTM\ cell​$。 
+我们要做$LSTM$的模型，只需要将原来的$neuron$替换成$LSTM\ cell$。 
 
 ![1537285420474](https://github.com/paradoxtown/paradoxtown.github.io/blob/master/img/complex_lstm_cell.png?raw=true)
 
@@ -188,7 +188,11 @@ $LSTM$总共有$3$个$gate$，公式$input$，$forget$和$output$，所以总共
 
 $transE$模型认为一个正确的三元组的$embedding(\vec h, \vec r, \vec t)$会满足$\vec h + \vec r = \vec t$，也就是说，头实体$embedding$加上关系$embedding$会等于尾实体$embedding$。
 
-定义势能函数：$f(h, r, t) = ||\vec h + \vec r - \vec t||_2$，也即欧几里得范数，表示两点之间的欧氏距离。
+定义势能函数：
+$$
+f(h, r, t) = ||\vec h + \vec r - \vec t||_2
+$$
+也即欧几里得范数，表示两点之间的欧氏距离。
 
 对于一个三元组来说，我们希望是能越低越好，而对于一个错误的三元组，我们希望势能越高越好。这样我们得到目标函数：
 $$
@@ -201,7 +205,10 @@ $$
 - $\gamma$表示正负样本之间的距离，是一个常数；
 - $[x]_+$表示$max(0, x)$。
 
-为了方便训练，避免**过拟合**，通常会进行$normalization$：$||h||\le1,||r||\le1,||t||\le1$。
+为了方便训练，避免**过拟合**，通常会进行$normalization$：
+$$
+||h|| \le1,||r|| \le1,||t|| \le1
+$$
 
 ## mAP
 

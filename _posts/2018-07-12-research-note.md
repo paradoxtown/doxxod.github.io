@@ -254,16 +254,21 @@ $$
 $Encoder$每次读取一个$symbol$，$RNN$中间的隐藏状态根据$(1)$来改变状态。当读到$EOS$的时候，隐藏状态就是整个序列的摘要$c$。
 
 $Decoder$是被训练以用来输出$output\ sequence$的另一层$RNN$。在$hidden\ state\ h_{<t>}$的基础上预测下一个$symbol\ y_t$来产生$output\ sequence$。$y_t, h_{<t>}$均是由$y_{t-1}$和$c$来决定的。因此，隐藏状态$h_{<t>}$由以下公式产生：
+
 $$
 h_{<t>} = f(h_{<t-1>}, y_{t-1}, c).
 $$
+
 下一个$symbol$的条件分布：
+
 $$
 P(y_t|y_{t-1}, y_{t-2},\dots, y_1, c)=g(h_{<t>}, y_{t-1}, c).
 $$
+
 $f$和$g$均是激活函数，其中后者必须是可以产生有效的概率的函数，例如$softmax$。
 
 $RNN\ Encoder-Decoder$的两个部分被共同训练以期达到最大的对数似然数。
+
 $$
 \max \limits _\theta \frac{1}{N} \sum \limits _{n=1} ^N \log p_\theta(y_n|x_n) \tag{4}
 $$

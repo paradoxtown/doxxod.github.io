@@ -217,3 +217,55 @@ $mAP(Mean\ Average\ Precision)$，$P(precision)$精度，正确率。和正确�
 正确率只考虑了返回的相关文档的个数，却没有考虑文档之间的序。为了体现越相关的文档应该越靠前的评估效果，于是有了$AP$的概念，对于一个有序的列表，计算$AP$的时候要先求出每个位置上的$precision$，然后对所有的位置的$precision$再做一个$average$。$precision$的定义前面已经给出。
 
 $mAP$即对这多个查询的平均。
+
+## AUC
+
+$AUC(Area\ Under\ Curve)$，主要用于二分类问题的评估，表示曲线$ROC$下面的面积。
+
+$ROC$曲线的$x$轴是伪阳性率$(false\ positive\ rate)$，$y$轴是真阳性率$(true\ positive\ rate)$。对于二分类问题我们一个样本的类别只有两种，我们用$0,1$分别表示两种类别，$0$和$1$也可以分别叫做阴性和阳性。当我们用一个分类器进行概率预测时，对于真是为$0$的样本，我们可能预测为$0$，也可能预测为$1$，真是为$1$同理。
+
+真阳性率=（真阳性的数量）/（真阳性的数量+伪阴性的数量）
+伪阳性率=（伪阳性的数量）/（伪阳性的数量+真阴性的数量）
+
+## Comprehension or Translation of Papers
+
+### *Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation*
+
+这篇论文主要向我们展示了一种新颖的$RNN$模型：$RNN\ Encoder-Decoder$，这个模型有两个$RNN$神经网络构成。其中一个$RNN$将一个序列进行编码，使其变成一个固定长的向量；另一层为解码器，将之前的向量解码成另一个符号的序列。该模型的编码器和解码器将会共同训练以期达到由$source\ sequence$得到$target \ sequence$最大的概率值，用该条件概率来作为的评估值。
+
+$RNN$是一个由一个在可变序列$X = (x_1, x_2, ..., x_T)$上运行的隐藏状态$h$和一个可选输出$y$组成。在每一个时间步长上，状态$h$的更新函数如下：
+$$
+h_{<t>} = f(h_{<t-1>}, x_t) \tag{1}
+$$
+其中$f$是一个非线性的激活函数，可能如同$sigmoid$般简单，也可能如同$LSTM$般复杂（后面应该都会使用$LSTM$）。
+
+$RNN$可以获得一个预测下一个符号的概率。在这种情况下，**在每一个时间步长$t$的输出是条件分布**：$p(x_t | x_{t-1}, \dots, x_1)$.举个例子，一个多项分布可以用一个$softmax$激活函数来输出：
+$$
+p(x_{t,j}=1|x_{t-1},\dots,x_1) = \frac{\exp(w_jh_{<t>})}{\sum \limits _{j'=1} ^K \exp(w_{j'}h_{<t>})} \tag{2}
+$$
+$j$是所有$K$种可能中的一种，$w_j$表示的是$weight\ matrix\ W$的第$j$行。通过加和操作我们可以得到序列$x$的可能性：
+$$
+p(x) = \prod \limits ^T _{t = 1} p(x_t|x_{t-1}, \dots, x_1) \tag{3}
+$$
+以概率的视角来看，这个新的模型相当于是学习一个从一个可变长度序列到另一个可变长度序列的条件分布：$p(y_1, \dots, y_{T'}|x_1, \dots, x_T)$.
+
+![1540227537670](https://github.com/paradoxtown/paradoxtown.github.io/blob/master/img/seq2seq.png?raw=true)
+
+$Encoder$每次读取一个$symbol$，$RNN$中间的隐藏状态根据$(1)$来改变状态。当读到$EOS$的时候，隐藏状态就是整个序列的摘要$c$。
+
+$Decoder$是被训练以用来输出$output\ sequence$的另一层$RNN$。在$hidden\ state\ h_{<t>}$的基础上预测下一个$symbol\ y_t$来产生$output\ sequence$。$y_t, h_{<t>}$均是由$y_{t-1}$和$c$来决定的。因此，隐藏状态$h_{<t>}$由以下公式产生：
+$$
+h_{<t>} = f(h_{<t-1>}, y_{t-1}, c).
+$$
+下一个$symbol$的条件分布：
+$$
+P(y_t|y_{t-1}, y_{t-2},\dots, y_1, c)=g(h_{<t>}, y_{t-1}, c).
+$$
+$f$和$g$均是激活函数，其中后者必须是可以产生有效的概率的函数，例如$softmax$。
+
+$RNN\ Encoder-Decoder$的两个部分被共同训练以期达到最大的对数似然数。
+$$
+\max \limits _\theta \frac{1}{N} \sum \limits _{n=1} ^N \log p_\theta(y_n|x_n) \tag{4}
+$$
+
+

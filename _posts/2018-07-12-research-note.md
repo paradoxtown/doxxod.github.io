@@ -256,6 +256,7 @@ $Encoder$每次读取一个`symbol`，$RNN$中间的隐藏状态根据$(1)$来�
 $Decoder$是被训练以用来输出的`output sequence`另一层$RNN$。在隐藏层$h_{<t>}$的基础上预测下一个`symbol`也就是$y_t$来产生`output sequence`。
 
 $y_t, h_{<t>}$均是由$y_{t-1}$和$c$来决定的。因此，隐藏状态$h_{<t>}$由以下公式产生：
+
 $$
 h_{<t>} = f(h_{<t-1>}, y_{t-1}, c).
 $$

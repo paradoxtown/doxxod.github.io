@@ -2,7 +2,7 @@
 layout:     post
 title:      stanford nlp notes
 subtitle:   winter 2017
-date:       2018-11-08
+date:       2018-11-07
 author:     paradox
 header-img: img/stanford.jpg
 catalog: true
@@ -41,26 +41,26 @@ soft max using word c to obtain probability of word o.
 
 we start computing deflector about $v_c$ for choosing how to change this vector, minimizing the objective function(2). 
 $$
-\frac{\part}{\part v_c} \log \frac{\exp u_o^{\rm T}v_c}{\sum _{w = 1} ^{\rm v} \exp(u_w ^{\rm T} v_c)} \tag{4}
+\frac{\partial}{\partial v_c} \log \frac{\exp u_o^{\rm T}v_c}{\sum _{w = 1} ^{\rm V} \exp(u_w ^{\rm T} v_c)} \tag{4}
 $$
 by doing minus, we get
 $$
-\frac {\part}{\part v_c} \log \exp(u_o ^{\rm T} v_c) - \frac{\part}{\part v_c} \sum\limits _{w =  1} ^{\rm v}\exp(u_w ^{\rm T} v_c) \tag{5}
+\frac {\partial}{\partial v_c} \log \exp(u_o ^{\rm T} v_c) - \frac{\partial}{\partial v_c} \sum\limits _{w =  1} ^{\rm V}\exp(u_w ^{\rm T} v_c) \tag{5}
 $$
 so, we can take this formula apart into tow parts.
 
 we can simplify the first part to the following
 $$
-\frac{\part}{\part v_c} u_o^{\rm T} v_c = u_o \tag{6}
+\frac{\partial}{\partial v_c} u_o^{\rm T} v_c = u_o \tag{6}
 $$
 then, take the second part into consideration, we can use chain rule to simplify the formula following
 $$
 \begin{split}
-&\frac{\part}{\part v_c} \sum\limits _{w = 1} ^{\rm v} \exp(u_w ^{\rm T} v_c)\\
-&= \frac{1}{\sum\limits_{w = 1} ^{\rm V}\exp(u_w ^{\rm T}v_c)} \frac{\part}{\part v_c}
+&\frac{\partial}{\partial v_c} \sum\limits _{w = 1} ^{\rm V} \exp(u_w ^{\rm T} v_c)\\
+&= \frac{1}{\sum\limits_{w = 1} ^{\rm V}\exp(u_w ^{\rm T}v_c)} \frac{\partial}{\partial v_c}
 \sum\limits _{x=1} ^{\rm V}\exp(u_x^{\rm T}{v_c})\\
-&= \frac{1}{\sum\limits_{w = 1} ^{\rm V}\exp(u_w ^{\rm T}v_c)} \sum\limits _{x=1}^{\rm V} \frac{\part}{\part v_c} \exp(u_x^{\rm T}v_c)\\
-&= \frac{1}{\sum\limits_{w = 1} ^{\rm V}\exp(u_w ^{\rm T}v_c)} \sum\limits _{x=1} ^{\rm V} \exp(u_x^{\rm T}v_c) \frac{\part}{\part v_c}u_x^{\rm T}v_c\\
+&= \frac{1}{\sum\limits_{w = 1} ^{\rm V}\exp(u_w ^{\rm T}v_c)} \sum\limits _{x=1}^{\rm V} \frac{\partial}{\partial v_c} \exp(u_x^{\rm T}v_c)\\
+&= \frac{1}{\sum\limits_{w = 1} ^{\rm V}\exp(u_w ^{\rm T}v_c)} \sum\limits _{x=1} ^{\rm V} \exp(u_x^{\rm T}v_c) \frac{\partial}{\partial v_c}u_x^{\rm T}v_c\\
 &= \frac{1}{\sum\limits_{w = 1} ^{\rm V}\exp(u_w ^{\rm T}v_c)} \sum\limits _{x=1} ^{\rm V} \exp(u_x^{\rm T}v_c) u_x
 \end{split}
 $$

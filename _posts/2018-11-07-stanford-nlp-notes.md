@@ -26,13 +26,13 @@ $$
 J(\theta)=-\frac{1}{T}\sum \limits _{t = 1} ^{T} \sum \limits _{-m\leq j\leq m(j\neq0)} \log {\rm p}(w_{t + j} | w_{t}) \tag{2}
 $$
 
-Where $\theta$ represents all variables(parameters) we will optimize.
+Where $\theta​$ represents all variables(parameters) we will optimize.
 
 So the formula(2) is a transformation form of formula(1), and it make formula(1) be a negative log likelihood. 
 
 loss function = cost function = objective function.
 
-for $p(w_{t+j} |w_{t})$ the simplest first formulation is
+the simplest first formulation is
 
 $$
 {\rm p}(o|c) = \frac{\exp(u_o^{\rm T}v_c)}{\sum\limits _{w = 1} ^{\rm v} \exp(u_w^{\rm T} v_c)} \tag{3}

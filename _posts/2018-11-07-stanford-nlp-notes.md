@@ -7,8 +7,7 @@ author:     paradox
 header-img: img/stanford.jpg
 catalog: true
 mathjax: true
-tags: - nlp
-      - note
+tags: 
 ---
 
 ## lecture2: word vector representations

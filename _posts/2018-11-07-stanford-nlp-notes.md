@@ -138,20 +138,19 @@ $$
 J(\theta) = \frac{1}{2} \sum\limits _{i, j = 1} ^W f(P_{i,j})(u_i^{\rm T}v_j - \log  P_{ij})^2 \tag{11}
 $$
 
-- $P _{i, j}$ means the co-occurrence matrix;
+$P _{i, j}$ means the co-occurrence matrix;
 
-- $f(P _{i, j})$ means the weighting function, the reason why we use this function is explained in paper:
+$f(P _{i, j})$ means the weighting function, the reason why we use this function is explained in paper:
 
-  A main drawback to this model $w^{T} _i \tilde{w} _k + b_i + \tilde{b}_k = \log(X_{ik})$ is that it weight all co-occurrences equally, even those that happen rarely or never. Such rare co-occurrences are noisy and carry less information than the more frequent ones -- yet even just the zero entries  account for $75-95\%$ of the data in $X$, depending on the vocabulary size and corpus.
+> A main drawback to this model ($w^{T} _i \tilde{w} _k + b_i + \tilde{b}_k = \log(X_{ik})$) is that it weight all co-occurrences equally, even those that happen rarely or never. Such rare co-occurrences are noisy and carry less information than the more frequent ones -- yet even just the zero entries  account for $75-95\%$ of the data in $X$, depending on the vocabulary size and corpus.
 
-  $f(x)$ should be relatively small for large values of $x$, so that frequent co-occurrences are not over weighted.
-  $$
-  f(x) = 
-  \begin{cases}
-  (x/x_{max})^{\alpha}&\text{if } x < x_{\max}\\
-  1&\text{  otherwise .}
-  \end{cases} \tag{12}
-  $$
-
+$f(x)$ should be relatively small for large values of $x$, so that frequent co-occurrences are not over weighted.
+$$
+f(x) = 
+\begin{cases}
+(x/x_{max})^{\alpha}&\text{if } x < x_{\max}\\
+1&\text{  otherwise .}
+\end{cases} \tag{12}
+$$
 
 

@@ -142,7 +142,7 @@ $$
 
 - $f(P _{i, j})$ means the weighting function, the reason why we use this function is explained in paper:
 
-  >a main drawback to this model $w^{T} _i \tilde{w} _k + b_i + \tilde{b}_k = \log(X_{ik})$ is that it weight all co-occurrences equally, even those that happen rarely or never. Such rare co-occurrences are noisy and carry less information than the more frequent ones -- yet even just the zero entries  account for $75-95\%$ of the data in $X$, depending on the vocabulary size and corpus.
+  A main drawback to this model $w^{T} _i \tilde{w} _k + b_i + \tilde{b}_k = \log(X_{ik})$ is that it weight all co-occurrences equally, even those that happen rarely or never. Such rare co-occurrences are noisy and carry less information than the more frequent ones -- yet even just the zero entries  account for $75-95\%$ of the data in $X$, depending on the vocabulary size and corpus.
 
   $f(x)$ should be relatively small for large values of $x$, so that frequent co-occurrences are not over weighted.
   $$
@@ -152,5 +152,6 @@ $$
   1&\text{  otherwise .}
   \end{cases} \tag{12}
   $$
+
 
 
